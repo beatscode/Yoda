@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import YodaSpeaks
 
 class YodaSpeaksTests: XCTestCase {
     
@@ -21,16 +22,24 @@ class YodaSpeaksTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testSentencePreparationForGetRequest() {
+        // This is an example of a functional test case.        
+        var yoda = YodaAPI.Mashape
+        var cleanedSentence = yoda.cleanSentence("money it costs to quote me. accept uber credits I do not.")
+        XCTAssertEqual("money+it+costs+to+quote+me.+accept+uber+credits+I+do+not.", cleanedSentence!, "Pass")
+       
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testOutputters(){
+        var yoda = YodaAPI.Mashape
+        var yodaPhrase = String("money it costs to quote me. accept uber credits I do not.")
+        var outputter = YodaAPI.Outputter.Leet
+        var formattedString = outputter.Format(yodaPhrase)
+        XCTAssertEqual(formattedString,"mon3y it co$t$ to quot3 m3. @cc3pt ub3r cr3dit$ I do not.","Pass")
+
+        outputter = YodaAPI.Outputter.Raw
+        formattedString = outputter.Format(yodaPhrase)
+        XCTAssertEqual(formattedString,yodaPhrase,"Pass")
     }
     
 }

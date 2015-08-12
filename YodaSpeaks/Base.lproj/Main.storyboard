@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="YodaSpeaks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +17,115 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Yoda Speaks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3O-Ma-8FP">
+                                <rect key="frame" x="250" y="55" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDu-iq-Jeq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Tell Yoda!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendSentenceToYoda:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GpD-h3-CBA"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfB-oo-D2n">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-zb-bJl">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="193" width="240" height="72"/>
+                                </variation>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sDu-iq-Jeq" firstAttribute="top" secondItem="VfB-oo-D2n" secondAttribute="bottom" constant="64" id="3ge-ut-h6I">
+                                <variation key="widthClass=compact" constant="115"/>
+                            </constraint>
+                            <constraint firstItem="VfB-oo-D2n" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="64" id="ONV-AM-jgl"/>
+                            <constraint firstItem="a3O-Ma-8FP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="33" id="T0i-ML-JKU">
+                                <variation key="widthClass=compact" constant="31"/>
+                            </constraint>
+                            <constraint firstItem="VfB-oo-D2n" firstAttribute="top" secondItem="a3O-Ma-8FP" secondAttribute="bottom" constant="24" id="Toq-Oq-Sfm">
+                                <variation key="widthClass=compact" constant="26"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="VfB-oo-D2n" secondAttribute="trailing" constant="64" id="XIb-SY-9ws"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VfB-oo-D2n" secondAttribute="bottom" constant="374" id="aV7-tL-hQV">
+                                <variation key="widthClass=compact" constant="430"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="sDu-iq-Jeq" secondAttribute="trailing" constant="151" id="eYn-WP-zXF">
+                                <variation key="widthClass=compact" constant="119"/>
+                            </constraint>
+                            <constraint firstItem="a3O-Ma-8FP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="35" id="fHJ-gr-yEB">
+                                <variation key="widthClass=compact" constant="33"/>
+                            </constraint>
+                            <constraint firstItem="sDu-iq-Jeq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="152" id="fMU-K8-m7v">
+                                <variation key="widthClass=compact" constant="119"/>
+                            </constraint>
+                            <constraint firstItem="a3O-Ma-8FP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="134" id="iZh-mn-YW3">
+                                <variation key="widthClass=compact" constant="115"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="a3O-Ma-8FP" secondAttribute="trailing" constant="133" id="xku-0M-bMw">
+                                <variation key="widthClass=compact" constant="114"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="sDu-iq-Jeq"/>
+                                <exclude reference="VfB-oo-D2n"/>
+                                <exclude reference="Fve-zb-bJl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3ge-ut-h6I"/>
+                                <exclude reference="eYn-WP-zXF"/>
+                                <exclude reference="fMU-K8-m7v"/>
+                                <exclude reference="ONV-AM-jgl"/>
+                                <exclude reference="Toq-Oq-Sfm"/>
+                                <exclude reference="XIb-SY-9ws"/>
+                                <exclude reference="T0i-ML-JKU"/>
+                                <exclude reference="iZh-mn-YW3"/>
+                                <exclude reference="xku-0M-bMw"/>
+                                <exclude reference="aV7-tL-hQV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="sDu-iq-Jeq"/>
+                                <include reference="VfB-oo-D2n"/>
+                                <include reference="Fve-zb-bJl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3ge-ut-h6I"/>
+                                <include reference="eYn-WP-zXF"/>
+                                <include reference="fMU-K8-m7v"/>
+                                <include reference="ONV-AM-jgl"/>
+                                <include reference="Toq-Oq-Sfm"/>
+                                <include reference="XIb-SY-9ws"/>
+                                <include reference="T0i-ML-JKU"/>
+                                <exclude reference="fHJ-gr-yEB"/>
+                                <include reference="iZh-mn-YW3"/>
+                                <include reference="xku-0M-bMw"/>
+                                <include reference="aV7-tL-hQV"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="TVOutput" destination="Fve-zb-bJl" id="1rf-0H-Z2J"/>
+                        <outlet property="TextViewYodaInput" destination="VfB-oo-D2n" id="F2V-X0-3H4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

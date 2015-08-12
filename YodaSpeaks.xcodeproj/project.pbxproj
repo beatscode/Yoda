@@ -13,6 +13,8 @@
 		FA3039D31B54307300169C2D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3039D21B54307300169C2D /* Images.xcassets */; };
 		FA3039D61B54307300169C2D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3039D41B54307300169C2D /* LaunchScreen.xib */; };
 		FA3039E21B54307300169C2D /* YodaSpeaksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3039E11B54307300169C2D /* YodaSpeaksTests.swift */; };
+		FA3039EF1B5439C500169C2D /* Yoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3039EE1B5439C500169C2D /* Yoda.swift */; };
+		FA552C7F1B560744001847AB /* Outputter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA552C7E1B560744001847AB /* Outputter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		FA3039DB1B54307300169C2D /* YodaSpeaksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YodaSpeaksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3039E01B54307300169C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA3039E11B54307300169C2D /* YodaSpeaksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YodaSpeaksTests.swift; sourceTree = "<group>"; };
+		FA3039EE1B5439C500169C2D /* Yoda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yoda.swift; sourceTree = "<group>"; };
+		FA552C7E1B560744001847AB /* Outputter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outputter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		FA3039C81B54307300169C2D /* YodaSpeaks */ = {
 			isa = PBXGroup;
 			children = (
+				FA552C7D1B560731001847AB /* YodaAPI */,
 				FA3039CB1B54307300169C2D /* AppDelegate.swift */,
 				FA3039CD1B54307300169C2D /* ViewController.swift */,
 				FA3039CF1B54307300169C2D /* Main.storyboard */,
@@ -110,6 +115,15 @@
 				FA3039E01B54307300169C2D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA552C7D1B560731001847AB /* YodaAPI */ = {
+			isa = PBXGroup;
+			children = (
+				FA3039EE1B5439C500169C2D /* Yoda.swift */,
+				FA552C7E1B560744001847AB /* Outputter.swift */,
+			);
+			name = YodaAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +228,8 @@
 			files = (
 				FA3039CE1B54307300169C2D /* ViewController.swift in Sources */,
 				FA3039CC1B54307300169C2D /* AppDelegate.swift in Sources */,
+				FA552C7F1B560744001847AB /* Outputter.swift in Sources */,
+				FA3039EF1B5439C500169C2D /* Yoda.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +425,7 @@
 				FA3039E71B54307300169C2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA3039E81B54307300169C2D /* Build configuration list for PBXNativeTarget "YodaSpeaksTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +434,7 @@
 				FA3039EA1B54307300169C2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
